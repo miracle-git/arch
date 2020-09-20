@@ -1,24 +1,28 @@
 <template>
   <div id="app">
-    <h2>组件通信</h2>
-    <hr>
-    <ul class="links">
-      <li><router-link to="/props-emit">Props & Emit</router-link>(父子组件)</li>
-      <li><router-link to="/event-bus">Event Bus</router-link>(任意组件)</li>
-      <li><router-link to="/vuex">Vuex</router-link>(任意组件)</li>
-      <li><router-link to="/refs">Refs</router-link>(父子组件)</li>
-      <li><router-link to="/parent-children">Parent & Children</router-link>(兄弟组件)</li>
-      <li><router-link to="/attrs-listeners">Attrs & Listeners</router-link>(父子组件)</li>
-      <li><router-link to="/provide-inject">Provide & Inject</router-link>(隔代组件)</li>
-    </ul>
-    <div class="content">
-      <router-view/>
-    </div>
+    <layout>
+      <template v-slot:header>
+        <h2>Vue插槽</h2>
+      </template>
+      <template>
+        <div class="content">
+          插槽分为默认插槽、具名插槽、作用域插槽。
+        </div>
+      </template>
+      <template v-slot:footer="{data}">
+        <p>版权归{{data.author}}所有。</p>
+      </template>
+    </layout>
   </div>
 </template>
 
 <script>
+  import Layout from './layout'
+
   export default {
-    name: 'app'
+    name: 'app',
+    components: {
+      Layout
+    }
   }
 </script>
