@@ -6,7 +6,11 @@ Vue.use(VueRouter)
 const routes = [
   { path: '/props-emit', component: () => import('../props-emit') },
   { path: '/event-bus', component: () => import('../event-bus') },
-  { path: '/vuex', component: () => import('../vuex') }
+  { path: '/vuex', component: () => import('../vuex') },
+  { path: '/refs', component: () => import('../refs') },
+  { path: '/root-parent-children', component: () => import('../root-parent-children') },
+  { path: '/attrs-listeners', component: () => import('../attrs-listeners') },
+  { path: '/provide-inject', component: () => import('../provide-inject') }
 ]
 
 export default new VueRouter({
