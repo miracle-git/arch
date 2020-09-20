@@ -8,7 +8,7 @@ const routes = [
   { path: '/event-bus', component: () => import('../event-bus') },
   { path: '/vuex', component: () => import('../vuex') },
   { path: '/refs', component: () => import('../refs') },
-  { path: '/root-parent-children', component: () => import('../root-parent-children') },
+  { path: '/parent-children', component: () => import('../parent-children') },
   { path: '/attrs-listeners', component: () => import('../attrs-listeners') },
   { path: '/provide-inject', component: () => import('../provide-inject') }
 ]
