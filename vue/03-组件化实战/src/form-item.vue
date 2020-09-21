@@ -11,6 +11,7 @@
 
   export default {
     name: 'm-form-item',
+    componentName: 'm-form-item',
     inject: ['form'],
     props: {
       label: {
