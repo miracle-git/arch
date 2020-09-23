@@ -1,5 +1,5 @@
-import install from './install'
 import Store from './store'
+import install from './install'
 
 export default {
   Store,
