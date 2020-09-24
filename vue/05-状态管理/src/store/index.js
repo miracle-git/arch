@@ -7,11 +7,6 @@ export default new Vuex.Store({
   state: {
     count: 0
   },
-  getters: {
-    doubleCount(state) {
-      return state.count * 2
-    }
-  },
   mutations: {
     add(state) {
       state.count++
