@@ -1,5 +1,5 @@
 # arch
-全栈架构技能学习，不限于vue, react, node...
+全栈架构技术栈，包含不限于vue, react, node...
 
 ## 运行步骤
 - 打开arch项目安装依赖包
