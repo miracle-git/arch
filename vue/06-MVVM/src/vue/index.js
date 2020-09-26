@@ -1,20 +1,13 @@
-import Vue from 'vue'
-import Vuex from './vuex'
+import observe from './observe'
+import proxy from './proxy'
 
-Vue.use(Vuex)
-
-export default new Vuex.Store({
-  state: {
-    count: 0
-  },
-  mutations: {
-    add(state) {
-      state.count++
-    }
-  },
-  actions: {
-    addAsync({ commit }) {
-      setTimeout(() => commit('add'), 1000)
-    }
+export default class Vue {
+  constructor(options) {
+    this.$options = options
+    this.$data = options.data
+    // 数据响应式
+    observe(this.$data)
+    // 数据代理
+    proxy(this, '$data')
   }
-})
+}
