@@ -1,8 +1,11 @@
-import Vue from './vue'
+import MVVM from './mvvm'
 
-const app = new Vue({
+const app = new MVVM({
   el: '#app',
   data: {
-    counter: 0
+    counter: 0,
+    content: '<span style="color:blue">MVVM</span>'
   }
 })
+
+setInterval(() => app.counter++, 1000)

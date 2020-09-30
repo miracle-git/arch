@@ -1,18 +1,23 @@
+import Dep from './dep'
+
 function defineReactive(obj, key, val) {
   // 递归
   observe(val)
+  // 创建当前key对应dep(一对一)
+  const dep = new Dep()
   // 对传入的数据进行拦截
   Object.defineProperty(obj, key, {
     get() {
-      console.log(`get ${key}`)
+      Dep.target && dep.addDep(Dep.target)
       return val
     },
     set(newVal) {
       if (newVal !== val) {
-        console.log(`set ${key}: ${newVal}`)
         // 如果传入的数据仍然是对象，继续做响应式处理
         observe(newVal)
         val = newVal
+        // 通知对应的watcher更新
+        dep.notify()
       }
     }
   })
