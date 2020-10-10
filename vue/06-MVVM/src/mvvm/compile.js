@@ -45,7 +45,7 @@ export default class Compiler {
   textUpdater(node, val) {
     node.textContent = val
   }
-W
+
   html(node, exp) {
     this.update(node, exp, 'html')
   }
